@@ -92,15 +92,19 @@
         history.pushState(null, null, '#' + id);
     }
 
-    var hash = window.location.hash;
 
-    console.log('hash', hash);
+    $( document ).ready(function () {
+        var hash = window.location.hash;
 
-    if (hash) {
-        click(hash.replace('#', ''))
-    } else {
-        click('home')
-    }
+        console.log('hash', hash);
+
+        if (hash) {
+            click(hash.replace('#', ''))
+        } else {
+            click('home')
+        }
+    })
+
 
 
 </script>
