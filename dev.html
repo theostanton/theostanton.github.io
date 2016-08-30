@@ -28,6 +28,7 @@
             <button class="btn btn-clear" id="jobs">Jobs</button>
             <button class="btn btn-clear" id="skills">Skills</button>
             <button class="btn btn-clear" id="projects">Projects</button>
+            <button class="btn btn-clear" id="life">Life</button>
             <!--<div id="sub_projects">-->
             <!--<button id="one_eye" class="btn btn-clear sub_button">One Eye</button>-->
             <!--<button id="tabla" class="btn btn-clear sub_button">eTabla</button>-->
@@ -55,7 +56,7 @@
     //        return $.fn.load_.apply(this,arguments).fadeOut("slow").hide().fadeIn();
     //    };
 
-    var clickIds = ['links', 'skills', 'education', 'jobs', 'projects'];
+    var clickIds = ['life','links', 'skills', 'education', 'jobs', 'projects'];
     var subIds = ['one_eye', 'lfgss', 'tabla', 'quadmonitor', 'pyquadmonitor', 'quadcopter'];
 
     clickIds.concat(subIds).forEach(function (id) {
@@ -66,8 +67,9 @@
 
 
     function click(id) {
-        $('#content').hide().load(`${id}.html`).fadeIn("fast");
-        $('#content').scrollTop();
+        var content = $('#content');
+        content.hide().load(`${id}.html`).fadeIn("fast");
+        content.scrollTop();
         clickIds.concat(subIds).forEach(function (currId) {
             if (currId === id) {
                 $(`#${currId}`).css('color', 'black')
