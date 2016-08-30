@@ -62,10 +62,15 @@ button {
 
 html {
     height: 100%;
+    overflow: hidden;
 }
 body{
     background-color: #ffffff;
     overflow: hidden;
+    height: 100%;
+}
+
+#nav_row{
     height: 100%;
 }
 
