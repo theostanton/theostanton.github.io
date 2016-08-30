@@ -11,6 +11,10 @@
     <meta name="msapplication-config" content="/fav/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
     <link rel="stylesheet" href="http://usewing.ml/dist/wing.min.css"/>
     <link rel="stylesheet" href="main.css"/>
     <meta charset="UTF-8">
@@ -18,9 +22,44 @@
 </head>
 <body>
 <div class="container">
-    <a href="http://angel.co/theo-stanton">
-        <div class="block"><h1>Theo Stanton</h1></div>
-    </a>
+    <h1 id="home">Theo Stanton</h1>
+    <div class="row">
+        <div class="col-2 nav">
+            <button class="btn btn-clear" id="jobs">Jobs</button>
+            <button class="btn btn-clear" id="skills">Skills</button>
+            <button class="btn btn-clear" id="projects">Projects</button>
+            <button class="btn btn-clear" id="education">Education</button>
+            <button class="btn btn-clear" id="links">Links</button>
+        </div>
+
+        <div id="content" class="col-8"></div>
+    </div>
 </div>
 </body>
+
+<script type="text/javascript">
+
+    var clickIds = ['home', 'links', 'skills', 'education', 'jobs', 'projects'];
+
+    clickIds.forEach(function (id) {
+        $(`#${id}`).click(function () {
+            click(id);
+        });
+    });
+
+    function click(id) {
+        $('#content').load(`${id}.html`);
+        clickIds.forEach(function (currId) {
+            if (currId === id) {
+                $(`#${currId}`).css('color', 'red')
+            } else {
+                $(`#${currId}`).css('color', 'gray')
+            }
+        })
+
+    }
+    click('home')
+
+</script>
+
 </html>
