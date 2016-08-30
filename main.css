@@ -77,7 +77,6 @@ body{
 #content {
     overflow-y:scroll;
     height: 100%;
-    margin-bottom: 500px;
 }
 
 .sub_button {
