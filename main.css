@@ -14,17 +14,6 @@
     border-width: 1px;
 }
 
-/*.images ul {*/
-    /*white-space: nowrap;*/
-    /*width: 1000000px;*/
-    /*height: 200px;*/
-/*}*/
-/*.images li {*/
-    /*height: 200px;*/
-    /*display: block;*/
-    /*float: left;*/
-/*}*/
-
 .images{
     overflow-x: scroll;
     overflow-y:hidden;
@@ -38,11 +27,18 @@
 }
 
 h6{
-    margin: 25px;
+    margin: 30px;
 }
 
 h3{
-    color:#bb0000;
+    color:#777777;
+}
+
+.item{
+    /*background: #00bb00;*/
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 a:hover{
@@ -54,11 +50,15 @@ button{
     color:#00f;
 }
 
+.sub_button {
+    padding-left: 20px;
+}
+
 .block:hover{
     background-color: aquamarine;
 }
 
 a {
-    color:black;
+    color:#0000bb;
     text-decoration:none;
 }
