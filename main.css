@@ -6,6 +6,8 @@
     text-align: center;
 }
 
+html, body { max-height: 100%; overflow: hidden }
+
 .nav {
     /*background-color: #bbbbbb;*/
     margin-top: 20px;
@@ -57,6 +59,13 @@ button{
     color:#00f;
 }
 
+body, html{
+    height: 100%
+}
+
+#content{
+    height: 100%;
+}
 .sub_button {
     padding-left: 20px;
 }
