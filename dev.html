@@ -94,14 +94,17 @@
     }
 
     var hash = window.location.hash;
-    console.log('hash',hash);
-    $(document).ready(function () {
-        console.log('onReady hash', hash);
+    if (hash.length > 0) {
+        console.log('hash', hash);
+        $(document).ready(function () {
+            console.log('onReady hash', hash);
 
-        if (hash) {
             click(hash.replace('#', ''))
-        }
-    })
+
+        })
+    } else {
+        console.log('no hash')
+    }
 
 
 </script>
