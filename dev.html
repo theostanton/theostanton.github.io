@@ -90,21 +90,19 @@
 //        }
         window.scrollTo(0, 0);
         history.pushState(null, null, '#' + id);
+
     }
 
 
-    $( document ).ready(function () {
+    $(document).ready(function () {
         var hash = window.location.hash;
 
         console.log('hash', hash);
 
         if (hash) {
             click(hash.replace('#', ''))
-        } else {
-            click('home')
         }
     })
-
 
 
 </script>
