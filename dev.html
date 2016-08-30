@@ -22,7 +22,7 @@
 </head>
 <body>
 <div class="container" style="height: 100%;">
-    <h1 id="home">Theo Stanton</h1>
+    <h1>Theo Stanton</h1>
     <div id="nav_row" class="row">
         <div class="col-2 nav">
             <button class="btn btn-clear" id="jobs">Jobs</button>
@@ -55,7 +55,7 @@
     //        return $.fn.load_.apply(this,arguments).fadeOut("slow").hide().fadeIn();
     //    };
 
-    var clickIds = ['home', 'links', 'skills', 'education', 'jobs', 'projects'];
+    var clickIds = ['links', 'skills', 'education', 'jobs', 'projects'];
     var subIds = ['one_eye', 'lfgss', 'tabla', 'quadmonitor', 'pyquadmonitor', 'quadcopter'];
 
     clickIds.concat(subIds).forEach(function (id) {
@@ -68,9 +68,9 @@
         $('#content').hide().load(`${id}.html`).fadeIn("fast");
         clickIds.concat(subIds).forEach(function (currId) {
             if (currId === id) {
-                $(`#${currId}`).css('color', 'red')
+                $(`#${currId}`).css('color', 'black')
             } else {
-                $(`#${currId}`).css('color', 'gray')
+                $(`#${currId}`).css('color', '#aaaaaa')
             }
         });
 
