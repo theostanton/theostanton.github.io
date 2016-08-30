@@ -68,7 +68,7 @@
 
     function click(id) {
         var content = $('#content');
-        content.hide().load(`${id}.html`).fadeIn("fast");
+        content.hide().html('').load(`${id}.html`).fadeIn("fast");
         content.ready(function () {
             content.scrollTop(0);
         });
