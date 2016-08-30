@@ -69,7 +69,9 @@
     function click(id) {
         var content = $('#content');
         content.hide().load(`${id}.html`).fadeIn("fast");
-        content.scrollTop();
+        content.ready(function () {
+            content.scrollTop(0);
+        });
         clickIds.concat(subIds).forEach(function (currId) {
             if (currId === id) {
                 $(`#${currId}`).css('color', 'black')
