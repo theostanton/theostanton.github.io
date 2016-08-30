@@ -64,8 +64,10 @@
         });
     });
 
+
     function click(id) {
-        $('#content').hide().load(`${id}.html`).fadeIn("fast").scrollTop();
+        $('#content').hide().load(`${id}.html`).fadeIn("fast");
+        $('#content').scrollTop();
         clickIds.concat(subIds).forEach(function (currId) {
             if (currId === id) {
                 $(`#${currId}`).css('color', 'black')
@@ -77,7 +79,8 @@
 //        if (id == 'projects') {
 ////            $('#sub_projects').show()
 //        } else if (subIds.indexOf(id) >= 0) {
-//            $(window).scrollTop($(`#${id}_content`).offset().top);
+//            $(window).scrollTop($(`#${id}
+//        _content`).offset().top);
 //        } else {
 ////            $('#sub_projects').hide();
 //        }
