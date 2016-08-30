@@ -14,6 +14,29 @@
     border-width: 1px;
 }
 
+/*.images ul {*/
+    /*white-space: nowrap;*/
+    /*width: 1000000px;*/
+    /*height: 200px;*/
+/*}*/
+/*.images li {*/
+    /*height: 200px;*/
+    /*display: block;*/
+    /*float: left;*/
+/*}*/
+
+.images{
+    overflow-x: scroll;
+    overflow-y:hidden;
+    white-space: nowrap;
+    height: 400px;
+}
+
+.images img{
+    height: 400px;
+    margin: 0 10px 0 0;
+}
+
 h6{
     margin: 25px;
 }
