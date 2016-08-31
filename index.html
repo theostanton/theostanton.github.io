@@ -93,10 +93,22 @@
     function click(id) {
 
         var content = $('#content');
-        content.hide().html('').load(`${id}.html`).fadeIn("fast");
-        content.ready(function () {
-            content.scrollTop(0);
-        });
+
+
+        if(subIds.indexOf(id)==-1){
+            content.hide().html('').load(`${id}.html`).fadeIn("fast");
+            content.ready(function () {
+                content.scrollTop(0);
+            });
+        } else {
+            content.hide().html('').load(`projects.html`).fadeIn("fast");
+
+            console.log('is project scroll to',id);
+            content.ready(function () {
+                content.animate({ scrollTop: $(`#${id}`).offset().top }, 'slow');
+            });
+        }
+
         clickIds.concat(subIds).forEach(function (currId) {
             if (currId === id) {
                 $(`#${currId}`).css('color', 'black')
