@@ -26,7 +26,7 @@
     <h1 id='title' style="cursor:pointer">Theo Stanton</h1>
     <div id="nav_row" class="row">
         <div class="col-2 nav">
-            <button class="btn btn-clear" id="jobs">_Jobs</button>
+            <button class="btn btn-clear" id="jobs">Jobs</button>
             <button class="btn btn-clear" id="skills">Skills</button>
             <button class="btn btn-clear" id="projects">Projects</button>
             <button class="btn btn-clear" id=life">Life</button>
@@ -92,7 +92,7 @@
 
     function click(id) {
 
-        id = id.replace('#', '');
+//        id = id.replace('#', '');
 //        id = id.replace('_', '');
 
         var content = $('#content');
@@ -126,7 +126,7 @@
         console.log('hash', hash);
         $(document).ready(function () {
             console.log('onReady hash', hash);
-            click(hash);
+            click(hash.replace('#', ''));
         })
     } else {
         console.log('no hash');
