@@ -11,17 +11,126 @@
     <meta name="msapplication-config" content="./fav/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
     <link rel="stylesheet" href="http://usewing.ml/dist/wing.min.css"/>
-    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="./main.css"/>
     <meta charset="UTF-8">
     <title>Theo</title>
 </head>
 <body>
-<div class="container">
-    <a href="http://angel.co/theo-stanton">
-        <div class="block"><h1>Theo Stanton</h1></div>
-    </a>
-    <img src="https://theostanton.piwikpro.com/piwik.php?idsite=1&rec=1&action_name=Index" style="border:0" alt=""/>
+<img src="https://theostanton.piwikpro.com/piwik.php?idsite=1&rec=1&action_name=Home" style="border:0" alt=""/>
+
+<div class="container" style="height: 100%;">
+    <h1 id='title' style="cursor:pointer">Theo Stanton</h1>
+    <div id="nav_row" class="row">
+        <div class="col-2 nav">
+            <button class="btn btn-clear" id="jobs">Jobs</button>
+            <button class="btn btn-clear" id="skills">Skills</button>
+            <button class="btn btn-clear" id="projects">Projects</button>
+            <button class="btn btn-clear" id="life">Life</button>
+            <!--<div id="sub_projects">-->
+            <!--<button id="one_eye" class="btn btn-clear sub_button">One Eye</button>-->
+            <!--<button id="tabla" class="btn btn-clear sub_button">eTabla</button>-->
+            <!--<button id="lfgss" class="btn btn-clear sub_button">LFGSS</button>-->
+            <!--<button id="lists" class="btn btn-clear sub_button">Lists</button>-->
+            <!--<button id="quadmonitor" class="btn btn-clear sub_button">QuadMonitor</button>-->
+            <!--<button id="pyquadmonitor" class="btn btn-clear sub_button">pyQuadMonitor</button>-->
+            <!--<button id="quadcopter" class="btn btn-clear sub_button">QuadCopter</button>-->
+            <!--</div>-->
+            <button class="btn btn-clear" id="education">Education</button>
+            <button class="btn btn-clear" id="links">Links</button>
+            <a href="mailto:theostanton@gmail.com">
+            <button class="btn btn-clear">Contact</button></a>
+        </div>
+
+        <div id="content" class="col-9">
+        </div>
+    </div>
 </div>
+<!-- Piwik -->
+<script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+        var u = "//theostanton.piwikpro.com/";
+        _paq.push(['setTrackerUrl', u + 'piwik.php']);
+        _paq.push(['setSiteId', 1]);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = u + 'piwik.js';
+        s.parentNode.insertBefore(g, s);
+    })();
+</script>
+<noscript><p><img src="//theostanton.piwikpro.com/piwik.php?idsite=1" style="border:0;" alt=""/></p></noscript>
+<!-- End Piwik Code -->
 </body>
+
+<script type="text/javascript">
+
+    //    $.fn.load_=$.fn.load;
+    //    $.fn.load=function(){
+    //        return $.fn.load_.apply(this,arguments).fadeOut("slow").hide().fadeIn();
+    //    };
+
+    var clickIds = ['life', 'links', 'skills', 'education', 'jobs', 'projects'];
+    var subIds = ['one_eye', 'lfgss', 'tabla', 'quadmonitor', 'pyquadmonitor', 'quadcopter'];
+
+    $(`#title`).click(function () {
+        click('home');
+    });
+
+    clickIds.concat(subIds).forEach(function (id) {
+        $(`#${id}`).click(function () {
+            click(id);
+        });
+    });
+
+    function click(id) {
+
+        var content = $('#content');
+        content.hide().html('').load(`${id}.html`).fadeIn("fast");
+        content.ready(function () {
+            content.scrollTop(0);
+        });
+        clickIds.concat(subIds).forEach(function (currId) {
+            if (currId === id) {
+                $(`#${currId}`).css('color', 'black')
+            } else {
+                $(`#${currId}`).css('color', '#aaaaaa')
+            }
+        });
+
+//        if (id == 'projects') {
+////            $('#sub_projects').show()
+//        } else if (subIds.indexOf(id) >= 0) {
+//            $(window).scrollTop($(`#${id}
+//        _content`).offset().top);
+//        } else {
+////            $('#sub_projects').hide();
+//        }
+        window.scrollTo(0, 0);
+        history.pushState(null, null, '#' + id);
+
+    }
+
+    var hash = window.location.hash;
+    if (hash.length > 0) {
+        console.log('hash', hash);
+        $(document).ready(function () {
+            console.log('onReady hash', hash);
+            click(hash.replace('#', ''));
+        })
+    } else {
+        console.log('no hash');
+        click('home');
+    }
+
+
+</script>
+
 </html>
