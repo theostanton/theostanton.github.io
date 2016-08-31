@@ -104,15 +104,17 @@
             content.hide().html('').load(`projects.html`).fadeIn("fast");
 
             console.log('is project scroll to',id);
-            content.ready(function () {
-                var div_id = `#${id}`;
-                var div = $(div_id);
-                var offset = div.offset();
-                console.log('ready div_id',div_id);
-                console.log('div',div);
-                console.log('offset',offset);
-
-                content.animate({ scrollTop: div.offset().top }, 'slow');
+            var div_id = `#${id}`;
+            var div = $(div_id);
+            var offset = div.offset();
+            console.log('ready div_id',div_id);
+            console.log('div',div);
+            console.log('offset',offset);
+            div.ready(function () {
+                console.log('div ready');
+                $('html, body').animate({
+                    scrollTop: div.top
+                }, 2000);
             });
         }
 
