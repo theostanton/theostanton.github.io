@@ -105,7 +105,9 @@
 
             console.log('is project scroll to',id);
             content.ready(function () {
-                content.animate({ scrollTop: $(`#${id}`).offset().top }, 'slow');
+                var div_id = `#${id}`;
+                console.log('ready div_id',div_id);
+                content.animate({ scrollTop: $(div_id).offset().top }, 'slow');
             });
         }
 
