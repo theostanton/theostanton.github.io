@@ -67,15 +67,9 @@
     })();
 </script>
 <noscript><p><img src="//theostanton.piwikpro.com/piwik.php?idsite=1" style="border:0;" alt=""/></p></noscript>
-<!-- End Piwik Code -->
 </body>
 
 <script type="text/javascript">
-
-    //    $.fn.load_=$.fn.load;
-    //    $.fn.load=function(){
-    //        return $.fn.load_.apply(this,arguments).fadeOut("slow").hide().fadeIn();
-    //    };
 
     var clickIds = ['life', 'links', 'skills', 'education', 'jobs', 'projects'];
     var subIds = ['one_eye', 'lfgss', 'tabla', 'quadmonitor', 'pyquadmonitor', 'quadcopter','rotary_encoder','lists'];
@@ -97,23 +91,13 @@
 
         if(subIds.indexOf(id)==-1){
             content.hide().html('').load(`${id}.html`).fadeIn("fast");
-            content.ready(function () {
-                content.scrollTop(0);
-            });
+
         } else {
             content.hide().html('').load(`projects.html`).fadeIn("fast");
-
-            console.log('is project scroll to',id);
-            var div_id = `${id}`;
-            $(`#${div_id}`).ready(function () {
-                console.log('div ready');
-                var offset = $(`#${div_id}`).offset();
-                console.log('offset',offset);
-                $('html, body').animate({
-                    scrollTop: div.offset().top
-                }, 2000);
-            });
         }
+        content.ready(function () {
+            content.scrollTop(0);
+        });
 
         clickIds.concat(subIds).forEach(function (currId) {
             if (currId === id) {
@@ -122,29 +106,16 @@
                 $(`#${currId}`).css('color', '#aaaaaa')
             }
         });
-
-//        if (id == 'projects') {
-////            $('#sub_projects').show()
-//        } else if (subIds.indexOf(id) >= 0) {
-//            $(window).scrollTop($(`#${id}
-//        _content`).offset().top);
-//        } else {
-////            $('#sub_projects').hide();
-//        }
         window.scrollTo(0, 0);
         history.pushState(null, null, '#' + id);
-
     }
 
     var hash = window.location.hash;
     if (hash.length > 0) {
-        console.log('hash', hash);
         $(document).ready(function () {
-            console.log('onReady hash', hash);
             click(hash.replace('#', ''));
         })
     } else {
-        console.log('no hash');
         click('home');
     }
 
