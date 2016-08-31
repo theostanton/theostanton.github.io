@@ -78,7 +78,7 @@
     //    };
 
     var clickIds = ['life', 'links', 'skills', 'education', 'jobs', 'projects'];
-    var subIds = ['one_eye', 'lfgss', 'tabla', 'quadmonitor', 'pyquadmonitor', 'quadcopter'];
+    var subIds = ['one_eye', 'lfgss', 'tabla', 'quadmonitor', 'pyquadmonitor', 'quadcopter','rotary_encoder','lists'];
 
     $(`#title`).click(function () {
         click('home');
@@ -106,8 +106,13 @@
             console.log('is project scroll to',id);
             content.ready(function () {
                 var div_id = `#${id}`;
+                var div = $(div_id);
+                var offset = div.offset();
                 console.log('ready div_id',div_id);
-                content.animate({ scrollTop: $(div_id).offset().top }, 'slow');
+                console.log('div',div);
+                console.log('offset',offset);
+
+                content.animate({ scrollTop: div.offset().top }, 'slow');
             });
         }
 
