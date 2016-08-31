@@ -60,7 +60,7 @@ button {
     transition: width 1s, height 1s;
     color:#aaaaaa;
     width: 100%;
-    text-align: left;
+    text-align: right;
 }
 
 html {
