@@ -14,7 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
-    <link rel="stylesheet" hr_ef="http://usewing.ml/dist/wing.min.css"/>
+    <link rel="stylesheet" href="http://usewing.ml/dist/wing.min.css"/>
     <link rel="stylesheet" href="./main.css"/>
     <meta charset="UTF-8">
     <title>Theo</title>
@@ -26,10 +26,10 @@
     <h1 id='title' style="cursor:pointer">Theo Stanton</h1>
     <div id="nav_row" class="row">
         <div class="col-2 nav">
-            <button class="btn btn-clear" id="jobs">Jobs</button>
-            <button class="btn btn-clear" id="skills">Skills</button>
-            <button class="btn btn-clear" id="projects">Projects</button>
-            <button class="btn btn-clear" id=life">Life</button>
+            <button class="btn btn-clear" id="jobs_button">Jobs</button>
+            <button class="btn btn-clear" id="skills_button">Skills</button>
+            <button class="btn btn-clear" id="projects_button">Projects</button>
+            <button class="btn btn-clear" id="life_button">Life</button>
             <!--<div id="sub_projects">-->
             <!--<button id="one_eye" class="btn btn-clear sub_button">One Eye</button>-->
             <!--<button id="tabla" class="btn btn-clear sub_button">eTabla</button>-->
@@ -39,8 +39,8 @@
             <!--<button id="pyquadmonitor" class="btn btn-clear sub_button">pyQuadMonitor</button>-->
             <!--<button id="quadcopter" class="btn btn-clear sub_button">QuadCopter</button>-->
             <!--</div>-->
-            <button class="btn btn-clear" id="education">Education</button>
-            <button class="btn btn-clear" id="links">Links</button>
+            <button class="btn btn-clear" id="education_button">Education</button>
+            <button class="btn btn-clear" id="links_button">Links</button>
             <a href="mailto:theostanton@gmail.com">
             <button class="btn btn-clear">Contact</button></a>
         </div>
@@ -85,15 +85,12 @@
     });
 
     clickIds.concat(subIds).forEach(function (id) {
-        $(`#${id}`).click(function () {
+        $(`#${id}_button`).click(function () {
             click(id);
         });
     });
 
     function click(id) {
-
-//        id = id.replace('#', '');
-//        id = id.replace('_', '');
 
         var content = $('#content');
         content.hide().html('').load(`${id}.html`).fadeIn("fast");
