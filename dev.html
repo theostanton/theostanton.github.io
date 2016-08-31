@@ -23,7 +23,7 @@
 <img src="https://theostanton.piwikpro.com/piwik.php?idsite=1&rec=1&action_name=Home" style="border:0" alt=""/>
 
 <div class="container" style="height: 100%;">
-    <h1>Theo Stanton</h1>
+    <h1 id='title' style="cursor:pointer">Theo Stanton</h1>
     <div id="nav_row" class="row">
         <div class="col-2 nav">
             <button class="btn btn-clear" id="jobs">Jobs</button>
@@ -77,6 +77,10 @@
 
     var clickIds = ['life', 'links', 'skills', 'education', 'jobs', 'projects'];
     var subIds = ['one_eye', 'lfgss', 'tabla', 'quadmonitor', 'pyquadmonitor', 'quadcopter'];
+
+    $(`#title`).click(function () {
+        click('home');
+    });
 
     clickIds.concat(subIds).forEach(function (id) {
         $(`#${id}`).click(function () {
