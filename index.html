@@ -26,10 +26,10 @@
     <h1 id='title' style="cursor:pointer">Theo Stanton</h1>
     <div id="nav_row" class="row">
         <div class="col-2 nav">
-            <button class="btn btn-clear" id="_jobs">_Jobs</button>
-            <button class="btn btn-clear" id="_skills">Skills</button>
-            <button class="btn btn-clear" id="_projects">Projects</button>
-            <button class="btn btn-clear" id="_life">Life</button>
+            <button class="btn btn-clear" id="jobs">_Jobs</button>
+            <button class="btn btn-clear" id="skills">Skills</button>
+            <button class="btn btn-clear" id="projects">Projects</button>
+            <button class="btn btn-clear" id=life">Life</button>
             <!--<div id="sub_projects">-->
             <!--<button id="one_eye" class="btn btn-clear sub_button">One Eye</button>-->
             <!--<button id="tabla" class="btn btn-clear sub_button">eTabla</button>-->
@@ -39,8 +39,8 @@
             <!--<button id="pyquadmonitor" class="btn btn-clear sub_button">pyQuadMonitor</button>-->
             <!--<button id="quadcopter" class="btn btn-clear sub_button">QuadCopter</button>-->
             <!--</div>-->
-            <button class="btn btn-clear" id="_education">Education</button>
-            <button class="btn btn-clear" id="_links">Links</button>
+            <button class="btn btn-clear" id="education">Education</button>
+            <button class="btn btn-clear" id="links">Links</button>
             <a href="mailto:theostanton@gmail.com">
             <button class="btn btn-clear">Contact</button></a>
         </div>
@@ -92,8 +92,8 @@
 
     function click(id) {
 
-        id = id.replace('#', '');
-        id = id.replace('_', '');
+//        id = id.replace('#', '');
+//        id = id.replace('_', '');
 
         var content = $('#content');
         content.hide().html('').load(`${id}.html`).fadeIn("fast");
