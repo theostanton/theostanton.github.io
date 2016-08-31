@@ -41,6 +41,7 @@
             <!--</div>-->
             <button class="btn btn-clear" id="education">Education</button>
             <button class="btn btn-clear" id="links">Links</button>
+            <a href="mailto:theostanton@gmail.com"></a><button class="btn btn-clear">Contact</button></div>
         </div>
 
         <div id="content" class="col-9">
@@ -89,6 +90,7 @@
     });
 
     function click(id) {
+
         var content = $('#content');
         content.hide().html('').load(`${id}.html`).fadeIn("fast");
         content.ready(function () {
