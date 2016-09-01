@@ -11,10 +11,10 @@
     <meta name="msapplication-config" content="./fav/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/jquery-ui.js"></script>
 
-    <link rel="stylesheet" href="http://usewing.ml/dist/wing.min.css"/>
+    <link rel="stylesheet" href="libs/wing.min.css"/>
     <link rel="stylesheet" href="./main.css"/>
     <meta charset="UTF-8">
     <title>Theo</title>
@@ -42,7 +42,8 @@
             <button class="btn btn-clear" id="education_button">Education</button>
             <button class="btn btn-clear" id="links_button">Links</button>
             <a href="mailto:theostanton@gmail.com">
-            <button class="btn btn-clear">Contact</button></a>
+                <button class="btn btn-clear">Contact</button>
+            </a>
         </div>
 
         <div id="content" class="col-9">
@@ -69,7 +70,7 @@
 <script type="text/javascript">
 
     var clickIds = ['life', 'links', 'skills', 'education', 'jobs', 'projects'];
-    var subIds = ['one_eye', 'lfgss', 'tabla', 'quadmonitor', 'pyquadmonitor', 'quadcopter','rotary_encoder','lists'];
+    var subIds = ['one_eye', 'lfgss', 'tabla', 'quadmonitor', 'pyquadmonitor', 'quadcopter', 'rotary_encoder', 'lists'];
 
     $(`#title`).click(function () {
         click('home');
@@ -85,15 +86,21 @@
 
         var content = $('#content');
 
-        if(subIds.indexOf(id)==-1){
-            content.hide().html('').load(`${id}.html`).fadeIn("fast");
 
-        } else {
-            content.hide().html('').load(`projects.html`).fadeIn("fast");
-        }
-        content.ready(function () {
+        function fadeContentIn() {
+            var htmlId = subIds.indexOf(id) == -1 ? `${id}.html` : `projects.html`;
+            content.load(htmlId).fadeIn(150);
             content.scrollTop(0);
-        });
+            window.scrollTo(0, 0);
+            content.ready(function () {
+                content.scrollTop(0);
+                window.scrollTo(0, 0);
+            });
+        }
+
+        content.fadeOut(150);
+        setTimeout(fadeContentIn, 150);
+
 
         clickIds.concat(subIds).forEach(function (currId) {
             if (currId === id) {
@@ -102,7 +109,6 @@
                 $(`#${currId}_button`).css('color', '#aaaaaa')
             }
         });
-        window.scrollTo(0, 0);
         history.pushState(null, null, '#' + id);
     }
 
