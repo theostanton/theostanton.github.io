@@ -103,11 +103,7 @@
 
 
         clickIds.concat(subIds).forEach(function (currId) {
-            if (currId === id) {
-                $(`#${currId}_button`).css('color', 'black')
-            } else {
-                $(`#${currId}_button`).css('color', '#aaaaaa')
-            }
+            $(`#${currId}_button`).css('color', currId === id ? 'black' : '#aaaaaa')
         });
         history.pushState(null, null, '#' + id);
     }

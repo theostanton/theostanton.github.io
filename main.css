@@ -68,9 +68,8 @@ html {
     overflow: hidden;
 }
 body{
-    background-color: #ffffff;
     overflow: hidden;
-    height: 100%;
+    height: inherit;
 }
 
 #nav_row{
@@ -79,15 +78,11 @@ body{
 
 #content {
     overflow-y:scroll;
-    height: 100%;
+    height: inherit;
 }
 
 .sub_button {
     padding-left: 20px;
-}
-
-.block:hover {
-    background-color: aquamarine;
 }
 
 a {
