@@ -89,7 +89,7 @@
 
         function fadeContentIn() {
             var htmlId = subIds.indexOf(id) == -1 ? `${id}.html` : `projects.html`;
-            content.load(htmlId).fadeIn(150);
+            content.html('').load(htmlId).fadeIn(150);
             content.scrollTop(0);
             window.scrollTo(0, 0);
             content.ready(function () {
