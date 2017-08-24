@@ -96,17 +96,15 @@ h6 {
 }
 
 .container {
-    max-width: 1280px;
+    max-width: 960px;
     margin: 0 auto 1.5em;
-    width: 80%
+    width: 80%;
 }
-/*@media screen and (max-width: 768px) {*/
-    /*.container {*/
-        /*max-width: 960px;*/
-        /*margin: 0 auto 1.5em;*/
-        /*width: 80%*/
-    /*}*/
-/*}*/
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%
+    }
+}
 
 .row {
     margin-top: 2.0833%;
@@ -183,9 +181,9 @@ h6 {
     }
 
     .row [class*=" col-"], .row [class^=col-] {
-        width: 100%;
+        /*width: 100%;*/
         margin-top: 2.0833%;
-        margin-left: 0
+        margin-left: 1px
     }
 }
 
