@@ -100,12 +100,12 @@ h6 {
     margin: 0 auto 1.5em;
     width: 80%;
 }
-@media screen and (max-width: 768px) {
-    .container {
-        max-width: 960px;
-        width: 95%
-    }
-}
+/*@media screen and (max-width: 768px) {*/
+    /*.container {*/
+        /*max-width: 960px;*/
+        /*width: 95%*/
+    /*}*/
+/*}*/
 
 .row {
     margin-top: 2.0833%;
@@ -182,7 +182,7 @@ h6 {
     }
 
     .row [class*=" col-"], .row [class^=col-] {
-        /*width: 100%;*/
+        width: 100%;
         margin-top: 2.0833%;
         margin-left: 1px
     }
@@ -390,9 +390,6 @@ pre > code {
     margin: 0 10px 0 0;
 }
 
-/*h1,h2,h3,h4,h5,h6{*/
-/*color: #ffffff;*/
-/*}*/
 
 h6 {
     /*line-height: 1.4;*/
