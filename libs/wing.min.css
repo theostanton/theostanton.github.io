@@ -95,17 +95,40 @@ h6 {
     }
 }
 
+
+#nav_row {
+
+}
+
+#content {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+h1{
+    cursor:pointer;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+}
+
 .container {
     max-width: 960px;
     margin: 0 auto 1.5em;
     width: 80%;
 }
-/*@media screen and (max-width: 768px) {*/
-    /*.container {*/
-        /*max-width: 960px;*/
-        /*width: 95%*/
-    /*}*/
-/*}*/
+
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 0;
+        width: 100vw;
+        height: 100vh
+    }
+
+    h1{
+        margin-top: 0;
+    }
+}
 
 .row {
     margin-top: 2.0833%;
@@ -182,10 +205,17 @@ h6 {
     }
 
     .row [class*=" col-"], .row [class^=col-] {
-        width: 100%;
         margin-top: 2.0833%;
-        margin-left: 1px
     }
+
+    .row .col-2 {
+        width: 25%
+    }
+
+    .row .col-9{
+        width: 65%
+    }
+
 }
 
 .btn, [type=submit], button {
@@ -437,14 +467,6 @@ body {
     height: inherit;
 }
 
-#nav_row {
-    height: 100%;
-}
-
-#content {
-    overflow-y: scroll;
-    height: inherit;
-}
 
 .sub_button {
     padding-left: 20px;
