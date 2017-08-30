@@ -14,6 +14,9 @@ body, h6 {
     font-weight: 100;
 }
 
+@import url('https://rsms.me/interface/interface.css');
+
+
 html {
     box-sizing: border-box;
     font-size: 62.5%
@@ -23,20 +26,19 @@ body {
     /*letter-spacing: .01em;*/
     font-size: 1.5em;
     font-weight: 100;
-    font-family: Roboto,sans-serif;
+    font-family: Interface, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 2rem;
     font-weight: 100;
-    font-family: Roboto, sans-serif;
+    font-family: Interface, sans-serif;
     color: #111111;
 }
 
 h1 {
     font-size: 4rem;
     line-height: 1.2;
-    font-family: Roboto, sans-serif;
 }
 
 h2 {
