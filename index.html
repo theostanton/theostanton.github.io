@@ -15,8 +15,6 @@
     <meta charset="UTF-8">
     <title>Theo Stanton</title>
     <meta name="description" content="Theo Stanton - Programmer. Engineer. Project manager. Problem solver.">
-
-
 </head>
 <body>
 
@@ -30,6 +28,15 @@
             <button class="btn btn-clear" id="jobs_button">Jobs</button>
             <button class="btn btn-clear" id="skills_button">Skills</button>
             <button class="btn btn-clear" id="projects_button">Projects</button>
+            <!--<div id="sub_projects">-->
+                <!--<button id="one_eye" class="btn btn-clear sub_button">One Eye</button>-->
+                <!--<button id="tabla" class="btn btn-clear sub_button">eTabla</button>-->
+                <!--<button id="lfgss" class="btn btn-clear sub_button">LFGSS</button>-->
+                <!--<button id="lists" class="btn btn-clear sub_button">Lists</button>-->
+                <!--<button id="quadmonitor" class="btn btn-clear sub_button">QuadMonitor</button>-->
+                <!--<button id="pyquadmonitor" class="btn btn-clear sub_button">pyQuadMonitor</button>-->
+                <!--<button id="quadcopter" class="btn btn-clear sub_button">QuadCopter</button>-->
+            <!--</div>-->
             <button class="btn btn-clear" id="life_button">Life</button>
             <button class="btn btn-clear" id="education_button">Education</button>
             <button class="btn btn-clear" id="links_button">Links</button>
@@ -62,10 +69,10 @@
     (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
         i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
         a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
+            m = s.getElementsByTagName(o)[0];
         a.async = 1;
         a.src = g;
         m.parentNode.insertBefore(a, m)
@@ -90,7 +97,6 @@
     function click(id) {
 
         var content = $('#content');
-
 
         function fadeContentIn() {
             var htmlId = subIds.indexOf(id) == -1 ? `${id}.html` : `projects.html`;
